@@ -61,9 +61,12 @@ public class WhisperingTranscriptionService
             = "org.jitsi.jigasi.transcription.whispering.websocket_url";
 
     //public final static String DEFAULT_WEBSOCKET_URL = "ws://192.168.43.152:8000";
-    public final static String DEFAULT_WEBSOCKET_URL = "ws://152.228.167.183:8000";
+    public final static String DEFAULT_WEBSOCKET_URL = "ws://vosk-service.production.svc.cluster.local";
 
     private final static String EOF_MESSAGE = "{\"eof\" : 1}";
+
+    private final static String EOF_MESSAGE_JJJDM = "{\"eof\" : 1}";
+
 
     private final String websocketUrl;
 
@@ -72,7 +75,7 @@ public class WhisperingTranscriptionService
      * to get a transcription.
      */
     public WhisperingTranscriptionService() {
-        websocketUrl = WEBSOCKET_URL;
+        websocketUrl = DEFAULT_WEBSOCKET_URL;
     }
 
     /**
