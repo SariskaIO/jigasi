@@ -106,6 +106,8 @@ public class WhisperingTranscriptionService
                         "encoding");
             }
 
+            logger.info("sendSingleRequest url used " + websocketUrl);
+
             WebSocketClient ws = new WebSocketClient();
             WhisperingWebsocketSession socket = new WhisperingWebsocketSession(request);
             ws.start();
@@ -181,12 +183,13 @@ public class WhisperingTranscriptionService
             this.debugName = debugName;
             WebSocketClient ws = new WebSocketClient();
             ws.start();
+            logger.info("WhisperingWebsocketStreamingSession url used " + websocketUrl);
             ws.connect(this, new URI(websocketUrl));
         }
 
         @OnWebSocketClose
         public void onClose(int statusCode, String reason) {
-            logger.info("CLOSED WHISPERING WEBSOCKET.");
+            logger.info("CLOSED WHISPERING WEBSOCKET." +  reason);
             this.session = null;
         }
 
