@@ -75,7 +75,7 @@ public class WhisperingTranscriptionService
      * to get a transcription.
      */
     public WhisperingTranscriptionService() {
-        websocketUrl = DEFAULT_WEBSOCKET_URL;
+        websocketUrl = WEBSOCKET_URL;
     }
 
     /**
